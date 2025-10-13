@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuration</title>
+    <link rel="stylesheet" href="../css/config.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Application Configuration</h1>
+
+        <form id="configForm">
+            <h2>General Settings</h2>
+            <label for="myCallsign">My Callsign:</label>
+            <input type="text" id="myCallsign" name="myCallsign" placeholder="Enter your Callsign" required>
+
+            <label for="timezone">Your Timezone:</label>
+            <select id="timezone" name="timezone">
+                <option value="UTC">UTC (GMT+00:00)</option>
+                <option value="Etc/GMT-14">GMT+14:00 (Line Islands)</option>
+                <option value="Etc/GMT-13">GMT+13:00 (Phoenix Islands, Tonga)</option>
+                <option value="Etc/GMT-12">GMT+12:00 (New Zealand, Fiji, Marshall Islands)</option>
+                <option value="Etc/GMT-11">GMT+11:00 (Solomon Islands, New Caledonia)</option>
+                <option value="Etc/GMT-10">GMT+10:00 (Sydney, Vladivostok)</option>
+                <option value="Etc/GMT-9">GMT+09:00 (Tokyo, Seoul)</option>
+                <option value="Etc/GMT-8">GMT+08:00 (Shanghai, Singapore, Perth)</option>
+                <option value="Etc/GMT-7">GMT+07:00 (Bangkok, Jakarta)</option>
+                <option value="Etc/GMT-6">GMT+06:00 (Dhaka, Almaty)</option>
+                <option value="Etc/GMT-5">GMT+05:00 (Karachi, Tashkent)</option>
+                <option value="Etc/GMT-4">GMT+04:00 (Dubai, Moscow)</option>
+                <option value="Etc/GMT-3">GMT+03:00 (Nairobi, Baghdad, Riyadh)</option>
+                <option value="Etc/GMT-2">GMT+02:00 (Cairo, Johannesburg, Helsinki)</option>
+                <option value="Etc/GMT-1">GMT+01:00 (Paris, Berlin, Lagos)</option>
+                <option value="Etc/GMT+1">GMT-01:00 (Azores, Cape Verde)</option>
+                <option value="Etc/GMT+2">GMT-02:00 (South Georgia)</option>
+                <option value="Etc/GMT+3">GMT-03:00 (Buenos Aires, São Paulo, Santiago)</option>
+                <option value="Etc/GMT+4">GMT-04:00 (Caracas, Halifax)</option>
+                <option value="Etc/GMT+5">GMT-05:00 (New York, Lima, Bogotá)</option>
+                <option value="Etc/GMT+6">GMT-06:00 (Mexico City, Chicago)</option>
+                <option value="Etc/GMT+7">GMT-07:00 (Denver, Phoenix)</option>
+                <option value="Etc/GMT+8">GMT-08:00 (Los Angeles, Vancouver)</option>
+                <option value="Etc/GMT+9">GMT-09:00 (Anchorage)</option>
+                <option value="Etc/GMT+10">GMT-10:00 (Honolulu)</option>
+                <option value="Etc/GMT+11">GMT-11:00 (American Samoa)</option>
+                <option value="Etc/GMT+12">GMT-12:00 (Baker Island, Howland Island)</option>
+            </select>
+
+                        <h2>Log de Argentina (LdA) Settings</h2>
+                        <label for="ldaUser">LdA Username:</label>
+                        <input type="text" id="ldaUser" name="ldaUser" placeholder="Enter your LdA Username">
+            
+                        <label for="ldaPass">LdA Password:</label>
+                        <input type="password" id="ldaPass" name="ldaPass" placeholder="Enter your LdA Password">
+            
+            <h2>QRZ.com Settings</h2>
+            <label for="qrzUsername">QRZ Username:</label>
+            <input type="text" id="qrzUsername" name="qrzUsername" placeholder="Enter your QRZ.com Username">
+
+            <label for="qrzPassword">QRZ Password:</label>
+            <input type="password" id="qrzPassword" name="qrzPassword" placeholder="Enter your QRZ.com Password">
+
+            <label for="qrzApiKey">QRZ.com Logbook API Key:</label>
+            <input type="password" id="qrzApiKey" name="qrzApiKey" placeholder="Enter your QRZ.com Logbook API Key">
+
+            <h2>eQSL.cc Settings</h2>
+            <label for="eqslUsername">eQSL.cc Username (Your Callsign):</label>
+            <input type="text" id="eqslUsername" name="eqslUsername" placeholder="Enter your eQSL.cc Callsign">
+
+            <label for="eqslPassword">eQSL.cc Password:</label>
+            <input type="password" id="eqslPassword" name="eqslPassword" placeholder="Enter your eQSL.cc Password">
+
+            <label>
+                <input type="checkbox" id="qrzHasSubscription" name="qrzHasSubscription">
+                I have a QRZ.com Logbook subscription (required for API access)
+            </label>
+
+            <button type="submit">Save Configuration</button>
+        </form>
+        <div id="configMessage" class="message"></div>
+        <a href="/" class="back-link">Back to Main App</a>
+    </div>
+
+    <script src="../js/config.js"></script>
+</body>
+</html>

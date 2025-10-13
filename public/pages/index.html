@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio API App</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <h1>Radio API Integrator</h1>
+    <p><a href="/config">Go to Configuration Page</a> | <a href="/qso-list">View QSO List</a></p>
+
+    <div class="container">
+        <div class="card">
+            <h2>QSO Submission</h2>
+            <form id="qsoForm">
+
+
+
+
+                <label for="sucall">Correspondent Callsign:</label>
+                <input type="text" id="sucall" name="sucall" required>
+                <button type="button" id="lookupSucallBtn">Lookup Callsign (QRZ)</button>
+                <div id="sucallQrzResult" class="result"></div>
+
+                <label for="banda">Band:</label>
+                <select id="banda" name="banda" required>
+                    <option value="">Select Band</option>
+                    <option value="160m">160m</option>
+                    <option value="80m">80m</option>
+                    <option value="60m">60m</option>
+                    <option value="40m">40m</option>
+                    <option value="30m">30m</option>
+                    <option value="20m">20m</option>
+                    <option value="17m">17m</option>
+                    <option value="15m">15m</option>
+                    <option value="12m">12m</option>
+                    <option value="10m">10m</option>
+                    <option value="6m">6m</option>
+                    <option value="2m">2m</option>
+                    <option value="70cm">70cm</option>
+                    <option value="23cm">23cm</option>
+                </select>
+
+                <label for="modo">Mode:</label>
+                <select id="modo" name="modo" required>
+                    <option value="">Select Mode</option>
+                    <option value="CW">CW</option>
+                    <option value="SSB">SSB</option>
+                    <option value="FM">FM</option>
+                    <option value="AM">AM</option>
+                    <option value="FT8">FT8</option>
+                    <option value="RTTY">RTTY</option>
+                    <option value="PSK31">PSK31</option>
+                    <option value="FT4">FT4</option>
+                    <option value="JS8">JS8</option>
+                    <option value="SSTV">SSTV</option>
+                    <option value="ATV">ATV</option>
+                    <option value="DMR">DMR</option>
+                    <option value="C4FM">C4FM</option>
+                    <option value="D-STAR">D-STAR</option>
+                </select>
+
+                <label for="fecha">Date (dd/mm/yyyy):</label>
+                <input type="date" id="fecha" name="fecha" required>
+
+                <label for="hora">Time (hhmm):</label>
+                <input type="time" id="hora" name="hora" required>
+
+                <label for="rst">RST:</label>
+                <input type="text" id="rst" name="rst" required>
+
+                <label for="prop">Propagation Mode (Optional):</label>
+                <select id="prop" name="prop">
+                    <option value="">None</option>
+                    <option value="AS">Aircraft Scatter</option>
+                    <option value="AUE">Aurora-E</option>
+                    <option value="AUR">Aurora</option>
+                    <option value="BS">Back scatter</option>
+                    <option value="ECH">EchoLink</option>
+                    <option value="EME">Earth-Moon-Earth</option>
+                    <option value="ES">Sporadic E</option>
+                    <option value="F2">F2 Reflection</option>
+                    <option value="FG">Field Guide</option>
+                    <option value="GW">Ground Wave</option>
+                    <option value="GWAVE">Ground Wave</option>
+                    <option value="ION">Ionoscatter</option>
+                    <option value="LOS">Line of Sight</option>
+                    <option value="M/S">Meteor Scatter</option>
+                    <option value="MS">Meteor Scatter</option>
+                    <option value="OTH">Other</option>
+                    <option value="PAC">Passive</option>
+                    <option value="RAN">Rain Scatter</option>
+                    <option value="SAT">Satellite</option>
+                    <option value="SPORADE">Sporadic E</option>
+                    <option value="TEP">Trans-Equatorial Propagation</option>
+                    <option value="TR">Tropospheric Ducting</option>
+                </select>
+
+                <label for="x_qslMSG">QSL Message (Optional):</label>
+                <textarea id="x_qslMSG" name="x_qslMSG"></textarea>
+
+                <button type="submit">Submit QSO</button>
+
+                <div style="margin-top: 20px; padding-top: 15px; border-top: 1px solid var(--border-color);">
+                    <label style="font-weight: 700;">Submit to:</label>
+                    <div style="display: flex; flex-direction: column; margin-top: 10px;">
+                        <label style="font-weight: normal;">
+                            <input type="checkbox" id="submitToLda" name="submitToLda" checked>
+                            Log de Argentina (LdA)
+                        </label>
+                        <label style="font-weight: normal;">
+                            <input type="checkbox" id="submitToQrz" name="submitToQrz" checked>
+                            QRZ.com Logbook
+                        </label>
+                        <label style="font-weight: normal;">
+                            <input type="checkbox" id="submitToEqsl" name="submitToEqsl" checked>
+                            eQSL.cc
+                        </label>
+                        <label style="font-weight: normal;">
+                            <input type="checkbox" id="saveToLocal" name="saveToLocal" checked>
+                            Save to Local File (JSON)
+                        </label>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="../js/main.js"></script>
+</body>
+</html>
